@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Thermostat View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ThermostatViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="QS4-2i-1Sm">
+                                <rect key="frame" x="222" y="20" width="157" height="29"/>
+                                <segments>
+                                    <segment title="Celsius"/>
+                                    <segment title="Fahrenheit"/>
+                                </segments>
+                                <connections>
+                                    <action selector="UIControlEventValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="I1A-1E-euL"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wq5-g3-6Z2">
+                                <rect key="frame" x="288" y="289" width="24" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="yL5-Ds-hae">
+                                <rect key="frame" x="154" y="550" width="293" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="289" id="cUJ-yQ-DGz"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="y5O-jk-I6e"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QS4-2i-1Sm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="6Bi-KO-Hv7"/>
+                            <constraint firstItem="QS4-2i-1Sm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IEH-ed-4SJ"/>
+                            <constraint firstItem="QS4-2i-1Sm" firstAttribute="centerX" secondItem="Wq5-g3-6Z2" secondAttribute="centerX" id="K9p-Pp-Oup"/>
+                            <constraint firstItem="Wq5-g3-6Z2" firstAttribute="centerX" secondItem="yL5-Ds-hae" secondAttribute="centerX" id="VJy-3j-Y9A"/>
+                            <constraint firstAttribute="bottom" secondItem="yL5-Ds-hae" secondAttribute="bottom" constant="20" symbolic="YES" id="WL7-m5-6HD"/>
+                            <constraint firstItem="Wq5-g3-6Z2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="jv3-Ft-eyq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dial" destination="yL5-Ds-hae" id="clq-GI-lFf"/>
+                        <outlet property="temperature" destination="Wq5-g3-6Z2" id="uD3-tW-2xg"/>
+                        <outlet property="unitToggle" destination="QS4-2i-1Sm" id="hQM-2D-7DJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="89" y="341"/>
+        </scene>
+    </scenes>
+</document>
